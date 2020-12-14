@@ -1,0 +1,103 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.normal {
+  background-color: #A9A878;
+}
+.fighting {
+  background-color: #C02F27;
+}
+.flying {
+  background-color: #A990F1;
+}
+.poison {
+  background-color: #A43DA5;
+}
+.ground {
+  background-color: #E1C067;
+}
+.rock {
+  background-color: #B89F38;
+}
+.bug {
+  background-color: #A8B820;
+}
+.ghost {
+  background-color:#715799;
+}
+.steel {
+  background-color: #B8B8D0;
+}
+.fire {
+  background-color: #F17F2E;
+}
+.water {
+  background-color: #6890F0;
+}
+.grass {
+  background-color: #78C850;
+}
+.electric {
+  background-color: #F9D12F;
+}
+.psychic {
+  background-color: #F95788;
+}
+.ice {
+  background-color: #98D9D9;
+}
+.dragon {
+  background-color: #7035FF;
+}
+.dark {
+  background-color: #705948;
+}
+.fairy {
+  background-color: #ECAAEC;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
