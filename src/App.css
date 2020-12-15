@@ -13,6 +13,23 @@
   }
 }
 
+.type-selector{
+  display: flex;
+  padding: 20px;
+}
+.type-selector__primary{
+  background-color: dimgrey;
+  border-radius: 25px;
+  padding: 15px;
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.type-selector__primary h2{
+  display:block;
+  width: 100%;
+}
+
 .button {
   display: inline-block;
   padding: 5px;
@@ -21,6 +38,13 @@
   border: 2px solid white;
   border-radius: 5px;
   text-transform: capitalize;
+  flex: 1 1 0;
+  flex-basis: 110px;
+  width: 110px;
+}
+.button.active{
+  border: 2px solid red;
+  outline: none;
 }
 
 .normal {
@@ -78,6 +102,15 @@
   background-color: #ECAAEC;
 }
 
+button:disabled{
+  background-color: grey;
+  color: darkgray;
+  border-color:darkgray;
+}
+button:hover{
+  cursor: pointer;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -87,17 +120,4 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

@@ -452,66 +452,67 @@ function App() {
   }
 
   function handleChangeTwo(e) {
-    setTypeTwo(e.target.value);
+    if (e.target.value == typeTwo) {
+      setTypeTwo("");
+    }
+    else {
+      setTypeTwo(e.target.value);
+    }
   }
 
   return (
     <div className="App">
       <header className="App-header">
-        <select
-          value={typeOne}
-          onChange={handleChangeOne}
-        >
-          {validTypesArray.flatMap(
-            (type) => {
-              if ( type != typeTwo ) {
-                return <option
-                  key={type}
-                  value={type}
-                >
-                  {type}
-                </option>
-              } else {
-                return <option
-                disabled
-                key={type}
-                value={type}
-              >
-                {type}
-              </option>
+        <div className="type-selector">
+          <div className="type-selector__primary">
+            <h2>Primary Type</h2>
+            {validTypesArray.flatMap(
+              (type) => {
+                let active = (typeOne == type) ? "active" :""; 
+                if ( type != typeTwo ) {
+                  return <button 
+                  value={type} 
+                  className={`button ${type} ${active}`} 
+                  onClick={handleChangeOne}>
+                    {type}
+                  </button>
+                } else {
+                  return <button 
+                  disabled 
+                  value={type} 
+                  className={`button ${type}`} 
+                  onClick={handleChangeOne}>
+                    {type}
+                  </button>
+                }
               }
-            }
-          )}
-        </select>
-        <select
-          value={typeTwo}
-          onChange={handleChangeTwo}
-        >
-          <option
-            key="none"
-            value=""
-          >none</option>
+            )}
+          </div>
+          <div className="type-selector__primary">
+          <h2>Secondary Type</h2>
           {validTypesArray.flatMap(
             (type) => {
+              let active = (typeTwo == type) ? "active" :""; 
               if ( type != typeOne ) {
-                return <option
-                  key={type}
-                  value={type}
-                >
+                return <button 
+                value={type} 
+                className={`button ${type} ${active}`} 
+                onClick={handleChangeTwo}>
                   {type}
-                </option>
+                </button>
               } else {
-                return <option
-                disabled
-                key={type}
-                value={type}
-              >
-                {type}
-              </option>
+                return <button 
+                disabled 
+                value={type} 
+                className={`button ${type}`} 
+                onClick={handleChangeTwo}>
+                  {type}
+                </button>
               }
             }
           )}
-        </select>
+        </div>
+        </div>
         <p>Regular: <br/> {regular}</p>
         <p>Resists: <br/> {resist}</p>
         <p>Double Resists: <br/> {doubleResist}</p>
